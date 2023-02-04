@@ -1,0 +1,49 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8grkb7ojm5lp"]
+
+[ext_resource type="Script" path="res://scripts/ant.gd" id="1_fomwa"]
+[ext_resource type="Texture2D" uid="uid://djovp7hyupas6" path="res://sprites/ant.png" id="2_bvb13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymhea"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8b27"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uvaa"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc45s"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_om83p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymhea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8b27")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uvaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc45s")
+}],
+"loop": true,
+"name": &"ant",
+"speed": 5.0
+}]
+
+[node name="PathFollow2D" type="PathFollow2D"]
+scale = Vector2(1.68012, 1.68012)
+script = ExtResource("1_fomwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_om83p")
+animation = &"ant"
