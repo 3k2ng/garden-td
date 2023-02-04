@@ -1,25 +1,40 @@
-[gd_scene load_steps=4 format=3 uid="uid://cd8salnfhuh12"]
+[gd_scene load_steps=5 format=3 uid="uid://cd8salnfhuh12"]
 
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_wtt8a"]
-[ext_resource type="Texture2D" uid="uid://bfyn8ufd3mjh8" path="res://sprites/icon.svg" id="2_5uxx6"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_uvu1r"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_hafhe"]
 radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deno4"]
+radius = 153.55
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2ado"]
+load_path = "res://.godot/imported/icon.svg-964d8c66fbd3bda40c44ca195472a8e1.ctex"
 
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_wtt8a")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="PlaceArea" type="Area2D" parent="."]
 collision_layer = 2048
 collision_mask = 2048
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_uvu1r")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlaceArea"]
+shape = SubResource("CircleShape2D_hafhe")
+
+[node name="ShootArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShootArea"]
+shape = SubResource("CircleShape2D_deno4")
+disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.498039)
-texture = ExtResource("2_5uxx6")
+texture = SubResource("CompressedTexture2D_u2ado")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="area_entered" from="PlaceArea" to="." method="_on_place_area_entered"]
+[connection signal="area_exited" from="PlaceArea" to="." method="_on_place_area_exited"]
+[connection signal="area_entered" from="ShootArea" to="." method="_on_shoot_area_entered"]
+[connection signal="area_exited" from="ShootArea" to="." method="_on_shoot_area_exited"]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt35g35g2dvb5"]
+
+[ext_resource type="PackedScene" uid="uid://cd8salnfhuh12" path="res://objects/tower.tscn" id="1_b8oaq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hecd4"]
+radius = 32.0
+
+[node name="Tower" instance=ExtResource("1_b8oaq")]
+
+[node name="CollisionShape2D" parent="PlaceArea" index="0"]
+shape = SubResource("CircleShape2D_hecd4")
