@@ -1,26 +1,30 @@
 [gd_scene load_steps=4 format=3 uid="uid://dm5iugdp035oe"]
 
 [ext_resource type="Script" path="res://scripts/the_route.gd" id="1_puq64"]
-[ext_resource type="PackedScene" uid="uid://bgf0ahiqx4rxf" path="res://objects/character.tscn" id="2_1oer7"]
 
 [sub_resource type="Curve2D" id="Curve2D_41uek"]
 bake_interval = 14.36
 _data = {
-"points": PackedVector2Array(-260.931, -143.024, 260.931, 143.024, -136, -86, 0, 0, 0, 0, 119, -71, 0, 0, 0, 0, 400, -55, 0, 0, 0, 0, 761, -124, 0, 0, 0, 0, 434, 109, 0, 0, 0, 0, 710, 415, 0, 0, 0, 0, 264, 358, 0, 0, 0, 0, -72, 271, 0, 0, 0, 0, -195, 162)
+"points": PackedVector2Array(-159.483, 11.8174, 159.483, -11.8174, -257, -4, -201.407, 31.7013, 201.407, -31.7013, 199, 44, -111.403, -33.371, 111.403, 33.371, 484, -20, -64.3394, -82.7601, 64.3394, 82.7601, 664, 3, 1, 0, 1, 0, 675, 169, 0, 0, 0, 0, 611, 322, 0, 0, 0, 0, 264, 358, 0, 0, 0, 0, -72, 271, 0, 0, 0, 0, -150, 230)
 }
 point_count = 9
 
+[sub_resource type="LabelSettings" id="LabelSettings_2mgv0"]
+
 [node name="the route" type="Node2D"]
-position = Vector2(317, 152)
+position = Vector2(322, 155)
 script = ExtResource("1_puq64")
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_41uek")
 
-[node name="character" parent="Path2D" instance=ExtResource("2_1oer7")]
-position = Vector2(-136, -86)
-rotation = 0.501406
-
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+offset_left = -286.0
+offset_top = -134.0
+offset_right = -184.0
+offset_bottom = -31.0
+label_settings = SubResource("LabelSettings_2mgv0")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
