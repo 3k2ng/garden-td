@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://fgfn0ujxc7x6"]
+
+[ext_resource type="PackedScene" uid="uid://bgf0ahiqx4rxf" path="res://objects/character.tscn" id="1_3vc6c"]
+[ext_resource type="Texture2D" uid="uid://djovp7hyupas6" path="res://sprites/ant.png" id="2_bvb13"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scjqq"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru3jg"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwcuf"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rercw"]
+atlas = ExtResource("2_bvb13")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dfibi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scjqq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ru3jg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwcuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rercw")
+}],
+"loop": true,
+"name": &"ant",
+"speed": 5.0
+}]
+
+[node name="PathFollow2D" instance=ExtResource("1_3vc6c")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_dfibi")
+animation = &"ant"
+autoplay = "ant"

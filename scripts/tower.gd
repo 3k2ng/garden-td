@@ -22,6 +22,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if _being_placed:
 		position = get_global_mouse_position()
+	print(_enemies_in_range)
 
 func place() -> void:
 	if _can_be_placed:
