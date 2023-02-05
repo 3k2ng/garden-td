@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd8salnfhuh12"]
+[gd_scene load_steps=6 format=3 uid="uid://cd8salnfhuh12"]
 
 [ext_resource type="Script" path="res://scripts/tower.gd" id="1_wtt8a"]
+[ext_resource type="PackedScene" uid="uid://c7asj38ghio3" path="res://objects/projectiles/projectile.tscn" id="2_8uba8"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2ado"]
+load_path = "res://.godot/imported/icon.svg-964d8c66fbd3bda40c44ca195472a8e1.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hafhe"]
 radius = 16.0
@@ -8,11 +12,14 @@ radius = 16.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_deno4"]
 radius = 153.55
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u2ado"]
-load_path = "res://.godot/imported/icon.svg-964d8c66fbd3bda40c44ca195472a8e1.ctex"
-
 [node name="Tower" type="Node2D"]
 script = ExtResource("1_wtt8a")
+attack_time = 0.1
+shot_scene = ExtResource("2_8uba8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+texture = SubResource("CompressedTexture2D_u2ado")
 
 [node name="PlaceArea" type="Area2D" parent="."]
 collision_layer = 2048
@@ -30,11 +37,10 @@ collision_mask = 1024
 shape = SubResource("CircleShape2D_deno4")
 disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.498039)
-texture = SubResource("CompressedTexture2D_u2ado")
+[node name="RetargetTimer" type="Timer" parent="."]
 
 [connection signal="area_entered" from="PlaceArea" to="." method="_on_place_area_entered"]
 [connection signal="area_exited" from="PlaceArea" to="." method="_on_place_area_exited"]
 [connection signal="area_entered" from="ShootArea" to="." method="_on_shoot_area_entered"]
 [connection signal="area_exited" from="ShootArea" to="." method="_on_shoot_area_exited"]
+[connection signal="timeout" from="RetargetTimer" to="." method="retarget"]
