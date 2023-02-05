@@ -24,6 +24,7 @@ var spawn_index = 0
 func _ready():
 	rand.randomize
 	$Label.text = format % [health, wave_num, money]
+	$Game_Over.hide()
 
 func new_wave():
 	wave_num += 1
@@ -47,7 +48,7 @@ func _process(delta):
 			
 				if (health <= 0):
 					$Timer.stop()
-					$Game_Over.text = "game\nover"
+					$Game_Over.show()
 					emit_signal("no_health")
 					for j in $Path2D.get_children():
 						j.queue_free()
@@ -77,7 +78,7 @@ func _on_button_pressed():
 		wave_num = 0
 		money = BASE_MONEY
 		$Button.text = "START WAVE"
-		$Game_Over.text = ""
+		$Game_Over.hide()
 	new_wave()
 	$Button.disabled = true
 	$Button.hide()
