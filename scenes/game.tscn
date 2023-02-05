@@ -1,10 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://5f2pit7urnb3"]
 
 [ext_resource type="PackedScene" uid="uid://deb8ta8xef1qv" path="res://objects/map.tscn" id="1_wsitt"]
-[ext_resource type="PackedScene" uid="uid://b46x3nr5wov32" path="res://objects/tower.tscn" id="2_v4d86"]
 [ext_resource type="PackedScene" uid="uid://dii2hjr7ga682" path="res://objects/test_objects/non_placeable.tscn" id="3_c65c8"]
 [ext_resource type="PackedScene" uid="uid://dm5iugdp035oe" path="res://objects/the_route.tscn" id="4_1os5k"]
-[ext_resource type="PackedScene" uid="uid://2hiy5hqjtpwx" path="res://objects/test_objects/laser_tower.tscn" id="4_016c8"]
+[ext_resource type="PackedScene" uid="uid://dt35g35g2dvb5" path="res://objects/test_objects/test_tower.tscn" id="4_u4rng"]
 
 [node name="game" type="Node2D"]
 
@@ -22,5 +21,4 @@ position = Vector2(376, 104)
 position = Vector2(144, 96)
 scale = Vector2(0.419104, 0.419104)
 
-[node name="Tower" parent="." instance=ExtResource("4_016c8")]
-position = Vector2(232, 160)
+[node name="Tower" parent="." instance=ExtResource("4_u4rng")]

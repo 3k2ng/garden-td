@@ -13,6 +13,7 @@ func init(target) -> void:
 	_start_position = position
 
 func _on_area_entered(area):
+	area.get_parent().hurt(4)
 	queue_free()
 
 func _process(delta):
