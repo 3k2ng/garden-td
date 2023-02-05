@@ -1,49 +1,49 @@
-[gd_scene load_steps=8 format=3 uid="uid://bu81cvamghlpl"]
+[gd_scene load_steps=8 format=3 uid="uid://b5n85457vrihg"]
 
-[ext_resource type="PackedScene" uid="uid://bgf0ahiqx4rxf" path="res://objects/character.tscn" id="1_nnl0k"]
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_nnl0k"]
 [ext_resource type="Texture2D" uid="uid://c5nnerkbmjvoo" path="res://sprites/slug.png" id="2_t5reb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_we7uk"]
-atlas = ExtResource("2_t5reb")
-region = Rect2(72, 0, 24, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp5dx"]
-atlas = ExtResource("2_t5reb")
-region = Rect2(48, 0, 24, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lcwc6"]
-atlas = ExtResource("2_t5reb")
-region = Rect2(24, 0, 24, 13)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1qpb7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8qpi"]
 atlas = ExtResource("2_t5reb")
 region = Rect2(0, 0, 24, 13)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_823jb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2n0cl"]
+atlas = ExtResource("2_t5reb")
+region = Rect2(24, 0, 24, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xt4qc"]
+atlas = ExtResource("2_t5reb")
+region = Rect2(48, 0, 24, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3a0kf"]
+atlas = ExtResource("2_t5reb")
+region = Rect2(72, 0, 24, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuo4f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_we7uk")
+"texture": SubResource("AtlasTexture_s8qpi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xp5dx")
+"texture": SubResource("AtlasTexture_2n0cl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lcwc6")
+"texture": SubResource("AtlasTexture_xt4qc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1qpb7")
+"texture": SubResource("AtlasTexture_3a0kf")
 }],
 "loop": true,
-"name": &"slug",
+"name": &"default",
 "speed": 5.0
 }]
 
 [node name="PathFollow2D" instance=ExtResource("1_nnl0k")]
 damage = 10
 speed = 200
+health = 30
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
-sprite_frames = SubResource("SpriteFrames_823jb")
-animation = &"slug"
-autoplay = "slug"
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_iuo4f")
+autoplay = "default"

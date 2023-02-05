@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://clljuaserqrgx"]
+
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_mjsvv"]
+[ext_resource type="Texture2D" uid="uid://cmbhattgxilsr" path="res://sprites/aphid.png" id="2_25i30"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d0tk"]
+atlas = ExtResource("2_25i30")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80j47"]
+atlas = ExtResource("2_25i30")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7kc7"]
+atlas = ExtResource("2_25i30")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjnjh"]
+atlas = ExtResource("2_25i30")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ect3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d0tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80j47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7kc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjnjh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PathFollow2D" instance=ExtResource("1_mjsvv")]
+speed = 350
+health = 10
+
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_5ect3")
+autoplay = "default"
