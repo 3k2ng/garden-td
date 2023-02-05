@@ -1,9 +1,12 @@
 extends Node2D
 
+signal no_health
+
 @export var wait = 1
 @export var health = 200
+
 var format = "Health: %s"
-var spawn_type: Array[String] = ["res://objects/slug.tscn", "res://objects/ant.tscn", "res://objects/aphid.tscn"]
+var spawn_type: Array[String] = ["res://objects/slug.tscn", "res://objects/ant.tscn", "res://objects/aphid.tscn", "res://objects/butterfly.tscn"]
 var spawn_index = 0
 
 
@@ -23,12 +26,13 @@ func _process(delta):
 			_i.queue_free()
 			health -= _i.damage
 			$Label.text = format % health
+			
+			if (health <= 0):
+				emit_signal("no_health")
+
 
 func _on_timer_timeout():
-	var spawn
-	spawn = load(spawn_type[spawn_index % spawn_type.size()]).instantiate()
+	
+	var spawn = load(spawn_type[spawn_index % spawn_type.size()]).instantiate()
 	spawn_index += 1
 	$Path2D.add_child(spawn)
-	
-	
-	
