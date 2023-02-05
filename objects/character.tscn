@@ -6,7 +6,6 @@
 radius = 24.0
 
 [node name="PathFollow2D" type="PathFollow2D"]
-scale = Vector2(1.68012, 1.68012)
 script = ExtResource("1_fw0gv")
 
 [node name="CharacterBody2D" type="Area2D" parent="."]
@@ -14,3 +13,7 @@ collision_layer = 1025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_qgfv5")
+
+[node name="Target" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(22.0222, 0)
+scale = Vector2(1, 1)

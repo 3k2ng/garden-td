@@ -78,6 +78,4 @@ func _on_shoot_area_exited(area):
 	if(area.get_parent()==_target): retarget()
 
 func distance_on_path(a,b):
-	print(a)
-	print(b)
 	return a.progress > b.progress
