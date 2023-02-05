@@ -8,7 +8,7 @@ const GHOST_ALPHA = 0.8
 var _target = null
 var _can_be_placed: bool = true
 var _enemies_in_range: Dictionary = {}
-var _time_since_attack: float = 0
+var _time_since_attack: float = attack_time
 
 @onready var sprite = $Sprite2D
 @onready var place_area = $PlaceArea
@@ -65,10 +65,12 @@ func retarget() -> void:
 func _on_place_area_entered(_area: Area2D) -> void:
 	sprite.modulate = Color(1,0,0,GHOST_ALPHA)
 	_can_be_placed = false
+	retarget()
 
 func _on_place_area_exited(_area: Area2D) -> void:
 	sprite.modulate = Color(1,1,1,GHOST_ALPHA)
 	_can_be_placed = true
+	retarget()
 
 func _on_shoot_area_entered(area):
 	_enemies_in_range[area.get_parent().name] = area.get_parent()

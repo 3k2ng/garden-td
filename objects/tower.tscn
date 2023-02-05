@@ -38,6 +38,7 @@ shape = SubResource("CircleShape2D_deno4")
 disabled = true
 
 [node name="RetargetTimer" type="Timer" parent="."]
+wait_time = 0.3
 
 [connection signal="area_entered" from="PlaceArea" to="." method="_on_place_area_entered"]
 [connection signal="area_exited" from="PlaceArea" to="." method="_on_place_area_exited"]

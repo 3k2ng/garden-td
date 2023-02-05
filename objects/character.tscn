@@ -13,7 +13,3 @@ collision_layer = 1025
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_qgfv5")
-
-[node name="Target" type="Node2D" parent="CharacterBody2D"]
-position = Vector2(22.0222, 0)
-scale = Vector2(1, 1)
