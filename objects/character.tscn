@@ -6,7 +6,7 @@
 radius = 24.0
 
 [node name="PathFollow2D" type="PathFollow2D"]
-rotates = false
+scale = Vector2(1.25, 1.25)
 loop = false
 script = ExtResource("1_fw0gv")
 

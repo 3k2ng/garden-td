@@ -4,10 +4,13 @@ signal no_health
 signal wave_done
 
 const BASE_NUM_ENEMIES = 20
+const BASE_HEALTH = 200
+const BASE_MONEY = 200
 
-@export var health = 200
-@export var remaining_spawns = 20
-@export var money = 200
+
+@export var health = BASE_HEALTH
+@export var remaining_spawns = BASE_NUM_ENEMIES
+@export var money = BASE_MONEY
 var wave_num = 0
 var rand = RandomNumberGenerator.new()
 var enemies_per_wave = 5
@@ -44,10 +47,13 @@ func _process(delta):
 			
 				if (health <= 0):
 					$Timer.stop()
-					$Label.text = "GAME OVER"
+					$Game_Over.text = "game\nover"
 					emit_signal("no_health")
 					for j in $Path2D.get_children():
 						j.queue_free()
+					$Button.text = "RESET"
+					$Button.disabled = false
+					$Button.show()
 	
 	if ($Path2D.get_child_count() == 0 && remaining_spawns == 0):
 		emit_signal("wave_done")
@@ -66,6 +72,12 @@ func _on_timer_timeout():
 
 
 func _on_button_pressed():
+	if (health <= 0):
+		health = BASE_HEALTH
+		wave_num = 0
+		money = BASE_MONEY
+		$Button.text = "START WAVE"
+		$Game_Over.text = ""
 	new_wave()
 	$Button.disabled = true
 	$Button.hide()
