@@ -1,5 +1,6 @@
 extends Area2D
 
+var consistent = false
 @export var time_to_target: float = 0.3
 
 var _time_traveled = 0

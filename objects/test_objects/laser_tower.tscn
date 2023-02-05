@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://2hiy5hqjtpwx"]
+
+[ext_resource type="PackedScene" uid="uid://cd8salnfhuh12" path="res://objects/tower.tscn" id="1_vjw4c"]
+[ext_resource type="PackedScene" uid="uid://3ur47m6pnbgp" path="res://objects/shooters/laser.tscn" id="2_px8kv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hecd4"]
+radius = 32.0
+
+[node name="Tower" instance=ExtResource("1_vjw4c")]
+attack_time = 0.02
+
+[node name="CollisionShape2D" parent="PlaceArea" index="0"]
+shape = SubResource("CircleShape2D_hecd4")
+
+[node name="Shooter" parent="." index="4" instance=ExtResource("2_px8kv")]

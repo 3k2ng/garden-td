@@ -3,7 +3,6 @@ extends Node2D
 const GHOST_ALPHA = 0.8
 
 @export var attack_time: float = 0.3
-@export var shot_scene: PackedScene
 
 var _target = null
 var _can_be_placed: bool = true
@@ -15,6 +14,7 @@ var _time_since_attack: float = attack_time
 @onready var shoot_area = $ShootArea
 @onready var shoot_area_shape = $ShootArea/CollisionShape2D
 @onready var retarget_timer = $RetargetTimer
+@onready var shooter = $Shooter
 
 @onready var _being_placed: bool = true
 
@@ -29,7 +29,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	if _being_placed:
 		position = get_global_mouse_position()
-		
+
 func _process(delta: float) -> void:
 	if not _being_placed:
 		_time_since_attack+=delta
@@ -48,11 +48,9 @@ func place() -> void:
 
 func attack() -> void:
 	if _target != null:
-		var shot = shot_scene.instantiate()
-		get_tree().get_root().add_child(shot)
-		shot.position = position
-		shot.init(_target)
-		
+		shooter.shoot(_target)
+	else:
+		shooter.stop_shooting()
 
 func retarget() -> void:
 	var enemies = _enemies_in_range.values()
