@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://co0nvd37gq3tx"]
+
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_2ra2j"]
+[ext_resource type="Texture2D" uid="uid://cndf7nxvm8m07" path="res://sprites/butterfly.png" id="2_y65rl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y21v0"]
+atlas = ExtResource("2_y65rl")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejdly"]
+atlas = ExtResource("2_y65rl")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju472"]
+atlas = ExtResource("2_y65rl")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xgyq"]
+atlas = ExtResource("2_y65rl")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uwg4r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y21v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejdly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju472")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7xgyq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PathFollow2D" instance=ExtResource("1_2ra2j")]
+damage = 10
+speed = 250
+health = 10
+flying = true
+
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_uwg4r")
+autoplay = "default"

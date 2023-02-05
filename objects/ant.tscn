@@ -1,38 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://fgfn0ujxc7x6"]
+[gd_scene load_steps=8 format=3 uid="uid://b8grkb7ojm5lp"]
 
-[ext_resource type="PackedScene" uid="uid://bgf0ahiqx4rxf" path="res://objects/character.tscn" id="1_3vc6c"]
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_3vc6c"]
 [ext_resource type="Texture2D" uid="uid://djovp7hyupas6" path="res://sprites/ant.png" id="2_bvb13"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_scjqq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_btera"]
 atlas = ExtResource("2_bvb13")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ru3jg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctkk0"]
 atlas = ExtResource("2_bvb13")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gwcuf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuvwb"]
 atlas = ExtResource("2_bvb13")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rercw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8yq8"]
 atlas = ExtResource("2_bvb13")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dfibi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1fij"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_scjqq")
+"texture": SubResource("AtlasTexture_btera")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ru3jg")
+"texture": SubResource("AtlasTexture_ctkk0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gwcuf")
+"texture": SubResource("AtlasTexture_nuvwb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rercw")
+"texture": SubResource("AtlasTexture_h8yq8")
 }],
 "loop": true,
 "name": &"ant",
@@ -40,8 +40,9 @@ animations = [{
 }]
 
 [node name="PathFollow2D" instance=ExtResource("1_3vc6c")]
+health = 15
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
-sprite_frames = SubResource("SpriteFrames_dfibi")
+[node name="AnimatedSprite2D" parent="CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_m1fij")
 animation = &"ant"
 autoplay = "ant"
