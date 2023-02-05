@@ -22,10 +22,10 @@ curve = SubResource("Curve2D_41uek")
 one_shot = true
 
 [node name="Label" type="Label" parent="."]
-offset_left = -286.0
-offset_top = -134.0
-offset_right = -184.0
-offset_bottom = -31.0
+offset_left = -319.0
+offset_top = -154.0
+offset_right = -217.0
+offset_bottom = -51.0
 label_settings = SubResource("LabelSettings_2mgv0")
 
 [node name="Button" type="Button" parent="."]

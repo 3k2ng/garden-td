@@ -5,7 +5,9 @@ extends PathFollow2D
 @export var health = 20
 @export var flying = false
 @export var value = 30
+var alive = true
 
-func _process(delta):
+func hurt(attack_damage):
+	health -= attack_damage
 	if (health <= 0):
-		queue_free()
+		alive = false
