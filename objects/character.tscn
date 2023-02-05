@@ -6,6 +6,8 @@
 radius = 24.0
 
 [node name="PathFollow2D" type="PathFollow2D"]
+rotates = false
+loop = false
 script = ExtResource("1_fw0gv")
 
 [node name="CharacterBody2D" type="Area2D" parent="."]

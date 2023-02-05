@@ -5,7 +5,7 @@
 [sub_resource type="Curve2D" id="Curve2D_41uek"]
 bake_interval = 14.36
 _data = {
-"points": PackedVector2Array(-159.483, 11.8174, 159.483, -11.8174, -257, -4, -201.407, 31.7013, 201.407, -31.7013, 199, 44, -87.3614, -17.8146, 87.3614, 17.8146, 484, -20, -64.3394, -82.7601, 64.3394, 82.7601, 664, 3, 31.0395, -96.1665, -31.0395, 96.1665, 739, 243, 101.468, -16.9706, -101.468, 16.9706, 493, 338, 0, 0, 0, 0, -57, 294, 0, 0, 0, 0, -252, 306)
+"points": PackedVector2Array(-159.483, 11.8174, 159.483, -11.8174, -257, -4, -201.407, 31.7013, 201.407, -31.7013, 199, 44, -87.3614, -17.8146, 87.3614, 17.8146, 484, -20, -64.3394, -82.7601, 64.3394, 82.7601, 664, 3, 31.0395, -96.1665, -31.0395, 96.1665, 739, 243, 101.468, -16.9706, -101.468, 16.9706, 493, 338, 0, 0, 0, 0, -57, 294, 0, 0, 0, 0, -200, 300)
 }
 point_count = 8
 
@@ -28,4 +28,12 @@ offset_right = -184.0
 offset_bottom = -31.0
 label_settings = SubResource("LabelSettings_2mgv0")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 663.0
+offset_top = -147.0
+offset_right = 815.0
+offset_bottom = -85.0
+text = "START WAVE"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
