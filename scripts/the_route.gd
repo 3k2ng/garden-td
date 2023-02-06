@@ -16,13 +16,13 @@ var rand = RandomNumberGenerator.new()
 var enemies_per_wave = 5
 
 var format = "Health: %s\nWave: %s\nMoney: %s"
-var spawn_type: Array[String] = ["res://objects/slug.tscn", "res://objects/ant.tscn", "res://objects/aphid.tscn", "res://objects/butterfly.tscn"]
+var spawn_type: Array[String] = ["res://objects/enemies/slug.tscn", "res://objects/enemies/ant.tscn", "res://objects/enemies/aphid.tscn", "res://objects/enemies/butterfly.tscn"]
 var spawn_index = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	rand.randomize
+	rand.randomize()
 	$Label.text = format % [health, wave_num, money]
 	$Game_Over.hide()
 
@@ -38,6 +38,7 @@ func _process(delta):
 		if (!_i.alive):
 			_i.queue_free()
 			money += _i.value
+			$Label.text = format % [health, wave_num, money]
 		else:
 			_i.progress += _i.speed*delta
 			

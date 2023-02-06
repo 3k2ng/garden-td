@@ -5,14 +5,15 @@ var up = false
 
 func _ready():
 	$GridContainer.columns = INVENTROY_SIZE
-	$AnimationPlayer.play("inventory")
+	$AnimationPlayer.play_backwards("inventory")
+	up = false
 
 func _on_button_pressed():
 	if up:
-		$AnimationPlayer.play("inventory")
+		$AnimationPlayer.play_backwards("inventory")
 		up = false
 	else:
-		$AnimationPlayer.play_backwards("inventory")
+		$AnimationPlayer.play("inventory")
 		up = true
 
 func add(component) -> bool:
@@ -24,4 +25,4 @@ func add(component) -> bool:
 	return true
 
 func _on_button_2_pressed():
-	add(load("res://objects/test_objects/test_inventory_item.tscn").instantiate())
+	add(load("res://objects/inventory_item.tscn").instantiate())

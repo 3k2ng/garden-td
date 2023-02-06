@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj1xopcohukxa"]
+
+[ext_resource type="Texture2D" uid="uid://bfyn8ufd3mjh8" path="res://sprites/icon.svg" id="1_0roae"]
+[ext_resource type="Script" path="res://scripts/inventory_item.gd" id="2_s3jrn"]
+
+[node name="test_inventory_button" type="Button"]
+custom_minimum_size = Vector2(90, 90)
+offset_right = 30.0
+offset_bottom = 31.0
+text = "
+"
+icon = ExtResource("1_0roae")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_s3jrn")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

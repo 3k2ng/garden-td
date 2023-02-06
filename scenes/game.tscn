@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://5f2pit7urnb3"]
+[gd_scene load_steps=6 format=3 uid="uid://bk06h0fq70323"]
 
 [ext_resource type="PackedScene" uid="uid://deb8ta8xef1qv" path="res://objects/map.tscn" id="1_wsitt"]
 [ext_resource type="PackedScene" uid="uid://dii2hjr7ga682" path="res://objects/test_objects/non_placeable.tscn" id="3_c65c8"]
@@ -26,4 +26,5 @@ scale = Vector2(0.419104, 0.419104)
 position = Vector2(232, 160)
 
 [node name="inventory" parent="." instance=ExtResource("5_h1gal")]
-scale = Vector2(0.428189, 0.466564)
+position = Vector2(468, 255)
+scale = Vector2(0.52, 0.52)

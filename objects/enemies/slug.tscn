@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b5n85457vrihg"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_nnl0k"]
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/enemies/character.tscn" id="1_nnl0k"]
 [ext_resource type="Texture2D" uid="uid://c5nnerkbmjvoo" path="res://sprites/slug.png" id="2_t5reb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s8qpi"]

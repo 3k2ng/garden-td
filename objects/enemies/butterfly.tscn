@@ -1,6 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://co0nvd37gq3tx"]
+[gd_scene load_steps=8 format=3]
 
-[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/character.tscn" id="1_2ra2j"]
+[ext_resource type="PackedScene" uid="uid://cqmboucrumldf" path="res://objects/enemies/character.tscn" id="1_2ra2j"]
 [ext_resource type="Texture2D" uid="uid://cndf7nxvm8m07" path="res://sprites/butterfly.png" id="2_y65rl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y21v0"]

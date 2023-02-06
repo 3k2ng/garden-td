@@ -43,9 +43,10 @@ position = Vector2(462, 259)
 script = ExtResource("1_armp7")
 
 [node name="GridContainer" type="GridContainer" parent="."]
-offset_left = 273.0
+layout_direction = 3
+offset_left = -773.0
 offset_top = 516.0
-offset_right = 773.0
+offset_right = -273.0
 offset_bottom = 606.0
 scale = Vector2(0.776338, 0.874493)
 size_flags_horizontal = 3
