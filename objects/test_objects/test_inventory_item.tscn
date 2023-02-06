@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://chf5dwcb8qywa"]
+[gd_scene load_steps=3 format=3 uid="uid://chf5dwcb8qywa"]
 
+[ext_resource type="Script" path="res://objects/test_objects/test_inventory_item.gd" id="1_6ee5i"]
 [ext_resource type="Texture2D" uid="uid://bfyn8ufd3mjh8" path="res://sprites/icon.svg" id="1_7nc7e"]
 
 [node name="test_inventory_button" type="Button"]
@@ -8,8 +9,11 @@ offset_top = -28.0
 offset_right = 36.0
 offset_bottom = 27.0
 size_flags_vertical = 4
+script = ExtResource("1_6ee5i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(34, 24)
 scale = Vector2(2, 2)
 texture = ExtResource("1_7nc7e")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

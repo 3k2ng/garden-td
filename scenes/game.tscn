@@ -26,5 +26,4 @@ scale = Vector2(0.419104, 0.419104)
 position = Vector2(232, 160)
 
 [node name="inventory" parent="." instance=ExtResource("5_h1gal")]
-position = Vector2(462, 259)
 scale = Vector2(0.428189, 0.466564)
