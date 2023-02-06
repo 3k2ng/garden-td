@@ -18,7 +18,8 @@ func _on_button_pressed():
 func add(component) -> bool:
 	if ($GridContainer.get_child_count() ==  INVENTROY_SIZE):
 		return false
-	$GridContainer.add_theme_constant_override("h_separation",component.size.x)
+	
+	$GridContainer.add_theme_constant_override("h_separation",0)
 	$GridContainer.add_child(component)
 	return true
 
