@@ -7,7 +7,7 @@
 radius = 32.0
 
 [node name="Tower" instance=ExtResource("1_vjw4c")]
-attack_time = 0.02
+attack_time = 0.04
 
 [node name="CollisionShape2D" parent="PlaceArea" index="0"]
 shape = SubResource("CircleShape2D_hecd4")
